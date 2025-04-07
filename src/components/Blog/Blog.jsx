@@ -43,7 +43,7 @@ const Blog = ({ blog, handleBookmark, handleMarkAsRead }) => {
           ))}
         </div>
         <div className="card-actions items-center justify-between">
-          <button className="underline underline-offset-4 cursor-pointer hover:text-[#6047EC]" onClick={() => handleMarkAsRead(blog.reading_time)}>
+          <button className="underline underline-offset-4 cursor-pointer hover:text-[#6047EC]" onClick={() => handleMarkAsRead(blog.reading_time, blog.id)}>
             Mark as read
           </button>
           <button className="btn btn-primary">Read More</button>

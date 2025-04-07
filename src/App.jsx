@@ -12,10 +12,16 @@ function App() {
     setBookmarked([...bookMarked, data]);
   };
 
-  const handleMarkAsRead = (time) => {
-    // console.log("Marked as read", time);
+  const handleMarkAsRead = (time, id) => {
+    // console.log("Marked as read", id);
     const newTime = readingTime + time;
     setreadingTime(newTime);
+    handleRemoveBookmark(id);
+  }
+
+  const handleRemoveBookmark = (id) => {
+    const newBookMarked = bookMarked.filter((marked) => marked.id !== id);
+    setBookmarked(newBookMarked);
   }
 
   return (
@@ -44,7 +50,7 @@ function App() {
               </h3>
               <div>
                 {bookMarked.map((marked) => (
-                  <div className="p-5 bg-white rounded-lg mt-5">
+                  <div key={marked.id} className="p-5 bg-white rounded-lg mt-5">
                     <p className="text-lg font-semibold">{marked.title}</p>
                   </div>
                 ))}
