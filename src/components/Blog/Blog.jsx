@@ -4,7 +4,7 @@
 import { HiOutlineBookmark } from "react-icons/hi2";
 import React from "react";
 
-const Blog = ({ blog, handleBookmark }) => {
+const Blog = ({ blog, handleBookmark, handleMarkAsRead }) => {
   
   return (
     <div className="card bg-base-100 shadow-sm p-3">
@@ -43,9 +43,9 @@ const Blog = ({ blog, handleBookmark }) => {
           ))}
         </div>
         <div className="card-actions items-center justify-between">
-          <a className="underline underline-offset-4" href="">
+          <button className="underline underline-offset-4 cursor-pointer hover:text-[#6047EC]" onClick={() => handleMarkAsRead(blog.reading_time)}>
             Mark as read
-          </a>
+          </button>
           <button className="btn btn-primary">Read More</button>
         </div>
       </div>
