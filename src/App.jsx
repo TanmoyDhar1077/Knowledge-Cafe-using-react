@@ -44,7 +44,7 @@ function App() {
                 Spent time on read : {readingTime} min
               </h3>
             </div>
-            <div className="p-8 bg-[#111111]/5 rounded-lg ">
+            <div className="p-8 bg-[#111111]/5 rounded-lg w-full">
               <h3 className="text-2xl font-bold text-start">
                 Bookmarked Blogs : {bookMarked.length}
               </h3>
